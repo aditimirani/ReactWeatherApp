@@ -4,8 +4,11 @@ export const Main = (props) =>{
     return (
       <div>
         <Nav/>
-        <h1>Main Component</h1>
-        {props.children}
+        <div>
+        <div className="small-4 medium-6 large-4 small-12 small-centered columns">
+          {props.children}
+        </div>
+      </div>
       </div>
     );
 }
