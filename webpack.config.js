@@ -18,6 +18,9 @@ var config = {
             loader: "babel-loader"
         }]
     },
+    devServer: {
+        port: 3000
+    },
     devtool: 'cheap-module-eval-source-map'
 }
 module.exports = config;
