@@ -28013,11 +28013,14 @@
 	    null,
 	    _react2.default.createElement(_Nav.Nav, null),
 	    _react2.default.createElement(
-	      "h1",
+	      "div",
 	      null,
-	      "Main Component"
-	    ),
-	    props.children
+	      _react2.default.createElement(
+	        "div",
+	        { className: "small-4 medium-6 large-4 small-12 small-centered columns" },
+	        props.children
+	      )
+	    )
 	  );
 	};
 
@@ -28031,9 +28034,11 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	exports.Nav = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(/*! react */ 8);
 	
@@ -28043,44 +28048,107 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Nav = exports.Nav = function Nav(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    'Nav Component',
-	    _react2.default.createElement(
-	      'ul',
-	      null,
-	      _react2.default.createElement(
-	        'li',
-	        null,
-	        _react2.default.createElement(
-	          _reactRouter.IndexLink,
-	          { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'Get Weather'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'li',
-	        null,
-	        _react2.default.createElement(
-	          _reactRouter.IndexLink,
-	          { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'About'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'li',
-	        null,
-	        _react2.default.createElement(
-	          _reactRouter.IndexLink,
-	          { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	          'Examples'
-	        )
-	      )
-	    )
-	  );
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Nav = exports.Nav = function (_React$Component) {
+	    _inherits(Nav, _React$Component);
+	
+	    function Nav() {
+	        _classCallCheck(this, Nav);
+	
+	        return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+	    }
+	
+	    _createClass(Nav, [{
+	        key: 'onSearch',
+	        value: function onSearch(event) {
+	            event.preventDefault();
+	            alert('Not yet wired up');
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'top-bar' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'top-bar-left' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'menu' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { className: 'menu-text' },
+	                            'React Weather App'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.IndexLink,
+	                                { to: '/', activeClassName: 'active', activeStyle: {
+	                                        fontWeight: 'bold'
+	                                    } },
+	                                'Get Weather'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.IndexLink,
+	                                { to: '/about', activeClassName: 'active', activeStyle: {
+	                                        fontWeight: 'bold'
+	                                    } },
+	                                'About'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.IndexLink,
+	                                { to: '/examples', activeClassName: 'active', activeStyle: {
+	                                        fontWeight: 'bold'
+	                                    } },
+	                                'Examples'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'top-bar-right' },
+	                    _react2.default.createElement(
+	                        'form',
+	                        { onSubmit: this.onSearch },
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'menu' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement('input', { type: 'search', placeholder: 'Search Weather' })
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement('input', { type: 'submit', className: 'button', value: 'Get Weather' })
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Nav;
+	}(_react2.default.Component);
 
 /***/ },
 /* 250 */
@@ -29903,13 +29971,46 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 185);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Examples = exports.Examples = function Examples(props) {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'Examples component'
+	    _react2.default.createElement(
+	      'h1',
+	      { className: 'text-center' },
+	      'Examples'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'Here are few example locations to try out: '
+	    ),
+	    _react2.default.createElement(
+	      'ol',
+	      null,
+	      _react2.default.createElement(
+	        'li',
+	        null,
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/?location=Bangalore' },
+	          'Bangalore ,Ind'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'li',
+	        null,
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/?location=Sydney' },
+	          'Sydney , AUS'
+	        )
+	      )
+	    )
 	  );
 	};
 
