@@ -12,7 +12,6 @@ export class Weather extends React.Component {
         }
     }
     handleSearch(location) {
-      debugger;
         let that = this;
         that.setState({isLoading: true})
         const OPEN_WEATHER_MAP_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=metric&appid=b3d4bd0dd79135f2af75c6230258fdfc";
@@ -30,8 +29,7 @@ export class Weather extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <h3>Weather component
-                    </h3>
+                    <h1 className="text-center">Get Weather</h1>
                     <WeatherForm onSearch={this.handleSearch.bind(this)}/>
                     <WeatherMessage location={this.state.location} temp={this.state.temp} isLoading={this.state.isLoading}/>
                 </div>

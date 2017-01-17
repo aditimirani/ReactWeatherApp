@@ -15,11 +15,10 @@ export class WeatherForm extends React.Component {
     render() {
         return (
             <div>
-                <h3 className="">Get Weather</h3>
                 <form onSubmit={this.onFormSubmit.bind(this)}>
                     <div className="">
-                        <input type="text" ref="location" placeholder="enter a city name"/>
-                        <button className="text-center">Get Weather</button>
+                        <input type="text" ref="location" placeholder="Enter a city name"/>
+                        <button className="button expanded hollow">Get Weather</button>
                     </div>
                 </form>
             </div>
