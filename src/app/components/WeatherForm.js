@@ -15,9 +15,9 @@ export class WeatherForm extends React.Component {
     render() {
         return (
             <div>
-                <h3 className="col-xs-8 col-xs-offset-2">Get Weather</h3>
+                <h3 className="">Get Weather</h3>
                 <form onSubmit={this.onFormSubmit.bind(this)}>
-                    <div className="col-xs-8 col-xs-offset-2">
+                    <div className="">
                         <input type="text" ref="location" placeholder="enter a city name"/>
                         <button className="text-center">Get Weather</button>
                     </div>

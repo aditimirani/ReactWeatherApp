@@ -6,6 +6,8 @@ import {Main} from "./components/Main"
 import {Weather} from "./components/Weather";
 import {About} from "./components/About";
 import {Examples} from "./components/Examples";
+import {foundation} from 'style!css!foundation-sites/dist/foundation.min.css';
+$(document).foundation();
 
 class App extends React.Component {
     render() {
