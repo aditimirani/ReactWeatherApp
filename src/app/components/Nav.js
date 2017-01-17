@@ -1,14 +1,47 @@
 import React from 'react';
 import {IndexLink} from 'react-router'
 
-export const Nav =(props) => {
-        return (
-            <div>Nav Component
-              <ul>
-                <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight :'bold'}}>Get Weather</IndexLink></li>
-                <li><IndexLink to="/about" activeClassName="active" activeStyle={{fontWeight :'bold'}}>About</IndexLink></li>
-                <li><IndexLink to="/examples" activeClassName="active" activeStyle={{fontWeight :'bold'}}>Examples</IndexLink></li>
-              </ul>
+export class Nav extends React.Component {
+  onSearch(event){
+    event.preventDefault();
+    alert('Not yet wired up');
+  }
+  render(){
+    return (
+        <div className="top-bar">
+            <div className="top-bar-left">
+                <ul className="menu">
+                  <li className="menu-text">React Weather App</li>
+                    <li>
+                        <IndexLink to="/" activeClassName="active" activeStyle={{
+                            fontWeight: 'bold'
+                        }}>Get Weather</IndexLink>
+                    </li>
+                    <li>
+                        <IndexLink to="/about" activeClassName="active" activeStyle={{
+                            fontWeight: 'bold'
+                        }}>About</IndexLink>
+                    </li>
+                    <li>
+                        <IndexLink to="/examples" activeClassName="active" activeStyle={{
+                            fontWeight: 'bold'
+                        }}>Examples</IndexLink>
+                    </li>
+                </ul>
             </div>
-        );
+            <div className="top-bar-right">
+              <form onSubmit={this.onSearch}>
+                <ul className="menu">
+                  <li>
+                    <input type="search" placeholder="Search Weather"/>
+                  </li>
+                  <li>
+                    <input type="submit" className="button" value="Get Weather" />
+                  </li>
+                </ul>
+              </form>
+            </div>
+        </div>
+    );
+  }
 }
